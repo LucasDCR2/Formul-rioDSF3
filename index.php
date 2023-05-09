@@ -11,24 +11,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Formulário em PHP</title>
 	<link rel="stylesheet" href="style.css">
-	<!--<script src="backend.js"></script> -->
 </head>
 <body>
-<script src="backend.js"></script>
 	<section class = "section">
 		<div class = "divisao">
 			<form id = "form" action="dados.php" method="POST">
 				<label for="nome">Nome:</label>
-				<input type="text" id="nome" placeholder = "Digite seu Nome" name="nome" required>
+				<input type="text" id="nome" placeholder = "Digite seu Nome" name="nome" >
 
 				<label for="email">E-mail:</label>
-				<input type="email" id="email" placeholder = "Digite seu E-mail" name="email" required>
+				<input type="email" id="email" placeholder = "Digite seu E-mail" name="email" >
 
 				<label for="cpf">CPF:</label>
-				<input type="text" id="cpf" placeholder = "Digite seu CPF" name="cpf" size="14" maxlength="14" oninput="this.value = this.value.replace(/[^-,0-9,.]/g, '');"required>
+				<input type="text" id="cpf" placeholder = "Digite seu CPF" name="cpf" size="14" maxlength="14" oninput="this.value = this.value.replace(/[^-,0-9,.]/g, '');">
 
 				<label for="genero">Gênero:</label>
-				<select id="genero" name="genero" required>
+				<select id="genero" name="genero" >
 					<option value="">Selecione</option>
 					<option value="masculino">Masculino</option>
 					<option value="feminino">Feminino</option>
@@ -38,7 +36,8 @@
 				<button type="submit">Enviar</button>
 				
 			</form>
-			<script src="script.js"></script>
 		</div>
 	</section>
+	<script src="js/sweetAlert2.js"></script>
+	<script src="js/backend.js"></script>
 </body>

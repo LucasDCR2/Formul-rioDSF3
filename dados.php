@@ -1,6 +1,27 @@
 <?php
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-// Recebe os dados do formulário
+if (empty($dados['nome']) || empty($dados['email']) || empty($dados['cpf']) || empty($dados['genero'])) {
+    $retorna = ['status' => false, 'msg' => "Erro! Preencha todos os campos obrigatórios!"];
+
+} elseif (!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)) {
+    $retorna = ['status' => false, 'msg' => "Erro! Insira um email válido!"];
+
+} elseif (!preg_match("/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/", $dados['cpf'])) {
+    $retorna = ['status' => false, 'msg' => "Erro! Insira um CPF válido!"];
+	
+} else {
+	// Cria uma nova string com os dados do formulário
+    $conteudo = $dados['nome'] .'---'. 'E-mail: ' . $dados['email'] .'---'. 'CPF: ' . $dados['cpf'] .'---'. 'Gênero: ' . $dados['genero'] . "\n";
+	// Salva a string no arquivo de texto
+    file_put_contents('dados.txt', $conteudo, FILE_APPEND | LOCK_EX);
+    $retorna = ['status' => true, 'msg' => "Sucesso"];
+	
+}
+
+echo json_encode($retorna);
+
+/*// Recebe os dados do formulário
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $cpf = $_POST['cpf'];
@@ -25,4 +46,4 @@ if (empty($nome) || empty($email) || empty($cpf) || empty($genero)) {
 
     echo 'Dados enviados com sucesso!';
 }
-
+*/
