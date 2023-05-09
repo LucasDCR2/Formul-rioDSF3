@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Formulário em PHP</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="backend.js"></script>
+	<!--<script src="backend.js"></script> -->
 </head>
 <body>
 	<form action="dados.php" method="POST">
@@ -33,7 +33,7 @@
 		</select>
 
 		<button type="submit">Enviar</button>
-		<div id="alerta" class="alert"></div>
+		
 	</form>
 
 	
