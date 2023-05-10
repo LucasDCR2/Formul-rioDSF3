@@ -1,14 +1,16 @@
 .all {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: #888;
+	background-color: #6f11bb;
   }
+
   
   .section {
-	width: 800px;
-	max-width: 600px; /* novo valor para o tamanho máximo da seção */
+	width: 520px;
+	max-width: 520px; /* novo valor para o tamanho máximo da seção */
 	display: flex;
 	justify-content: center; /* adiciona alinhamento horizontal para centralizar */
   }
@@ -48,7 +50,7 @@
   
   .botao {
 	padding: 10px;
-	background-color: #4CAF50;
+	background-color: #1900ff;
 	color: white;
 	border: none;
 	border-radius: 5px;
@@ -56,8 +58,10 @@
   }
   
   .botao:hover {
-	background-color: #3e8e41;
+	background-color: #4d3e8e;
   }
+
+  
 
 
 
