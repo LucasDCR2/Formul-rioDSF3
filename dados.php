@@ -12,7 +12,12 @@ if (empty($dados['nome']) || empty($dados['email']) || empty($dados['cpf']) || e
 	
 } else {
 	// Cria uma nova string com os dados do formulário
-    $conteudo = $dados['nome'] .'---'. 'E-mail: ' . $dados['email'] .'---'. 'CPF: ' . $dados['cpf'] .'---'. 'Gênero: ' . $dados['genero'] . "\n";
+    $conteudo = '-------------------------------------'."\n".
+                'Nome: '.$dados['nome'] ."\n". 
+                'E-mail: '.$dados['email'] ."\n". 
+                'CPF: ' .$dados['cpf'] ."\n". 
+                'Gênero: '.$dados['genero']."\n" . 
+                '-------------------------------------'."\n";
 	// Salva a string no arquivo de texto
     file_put_contents('dados.txt', $conteudo, FILE_APPEND | LOCK_EX);
     $retorna = ['status' => true, 'msg' => "Sucesso"];
